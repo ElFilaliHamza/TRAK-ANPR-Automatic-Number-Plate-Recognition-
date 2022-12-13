@@ -40,8 +40,7 @@ python -m ipykernel install --user --name=anprenv
 <pre>
 jupyter notebook 
 </pre>
-- ensure you change the kernel to the virtual environment as shown below .
-<img src="https://i.imgur.com/V8eBDTP.png"> 
+- ensure you change the kernel to the virtual environment .
 <br/>
 <b>Step 6.</b>At this point you need to install all requirements in the file requirements.txt . 
 <pre>
@@ -49,24 +48,18 @@ pip install -r .\models\requirements.txt
 </pre>
 
 <b>Step 7.</b>  Run all cells In the notebook *TRAK_ANPR.ipynb* <br/>
-Make sure you get at the end a result as the image below .
+Make sure you get at the end the right result .
 <br/><br/>
-<img src="https://i.imgur.com/V8eBDTP.png"> 
 Because during this process the Notebook will install Tensorflow Object Detection and then test it. You should ideally receive a notification indicating that the API has installed successfully .
-<img src="https://i.imgur.com/V8eBDTP.png"> 
 </pre>
 <b><h3> Application Testing : </h3></b>
 <br />To run the main desktop application application use this command 
 <pre>
 python .\mainAnprApp.py<br/>
 <b>Step 8.</b> So 
-<img src="https://i.imgur.com/FSQFo16.png">
 If not, resolve installation errors by referring to the <a href="https://github.com/nicknochnack/TFODCourse/blob/main/">Error Guide.md</a> in this folder.
 <br /> <br/>
-<b>Step 9.</b>  
-<img src="https://i.imgur.com/K0wLO57.png"> 
-<br />
-<b>Step 10.</b> 
+<b>Step 9.</b> 
 <pre> cd Tensorlfow/workspace/models/my_ssd_mobnet/eval</pre> 
 and open Tensorboard with the following command
 <pre>tensorboard --logdir=. </pre>
