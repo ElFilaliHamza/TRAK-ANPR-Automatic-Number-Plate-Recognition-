@@ -1,5 +1,7 @@
 # ANPR TRAK
 
+##### FOR MORE DETAILS DON"T HESITATE TO READE THE FILE ANPR_REPORT.PDF  
+
 ## introduction
 Always in my learning process . I choose the hard way, for this project I decide to deep dive in some of the most complecated and pwerfull api's in the domaine eaven if I still don't understand the hole principales and mechanismes of the field . So here we have tow crucial concepts Detection and recognition, in order to create an application capable of detrmine the place and eaven more the text of the car plate number from an image or a video ( frames ) . this looks simple but in depth it's very complecated at least for me. In my case I decided to use tow models , The first model is the <a href="">object_detection</a> api from the <a href="">TensorFlow</a> framework so I have the chance to explore some of the features on their <a href="">documentation in github</a> and learn some of the main functionalities of their api , with it I was able to figure out how finetuning done to their object detection model on my own classification problem in result I get a high quality model for car plate detection that predict the position of the plate with in an image . The second model uses YoloV3 architecture trained on a big dataset created by some UM6P students ( Université Mohammed VI Polytechnique ).
 
