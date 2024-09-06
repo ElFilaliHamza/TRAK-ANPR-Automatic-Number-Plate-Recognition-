@@ -1,90 +1,105 @@
 # ANPR TRAK
 
-##### For more details, don't hesitate to read the file `ANPR_REPORT.PDF`.
+##### For more details, please refer to `ANPR_REPORT.PDF`.
 
 ## Introduction
 
-In my continuous learning journey, I often choose the challenging path. For this project, I decided to delve into some of the most complex and powerful APIs in the domain, even though I don't fully understand all the principles and mechanisms yet. This project focuses on two crucial concepts: detection and recognition. The goal is to create an application capable of determining the location and even the text of a car's license plate from an image or video frames. While this may seem simple, it is quite complex, at least for me.
+In my continuous learning journey, I often choose challenging paths. This project involves exploring complex and powerful APIs to develop an application capable of detecting and recognizing car license plates from images or video frames. The project focuses on two crucial concepts: detection and recognition.
 
-I decided to use two models. The first model is the [Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) from the [TensorFlow](https://www.tensorflow.org/) framework. This allowed me to explore some of their features and learn the main functionalities of their API. I was able to fine-tune their object detection model for my classification problem, resulting in a high-quality model for car plate detection that predicts the position of the plate within an image. The second model uses the YOLOv3 architecture, trained on a large dataset created by students from Université Mohammed VI Polytechnique (UM6P).
+I utilized two models for this task. The first model is the [Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) from the [TensorFlow](https://www.tensorflow.org/) framework, which I fine-tuned for car plate detection. The second model employs the YOLOv3 architecture, trained on a dataset created by students from Université Mohammed VI Polytechnique (UM6P).
 
 ## Test the Application Interface
 
-To run the application interface, execute the following command:
+To run the application interface, execute:
 
 ```bash
-python .\mainAnprApp.py
+python mainAnprApp.py
 ```
 
 ## Setup
 
-To test the model, you can use the `TRAK_ANPR_Test.ipynb` notebook directly, or explore the entire object detection process in the `TRAK_ANPR.ipynb` notebook. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/hamza-el-filali-en1999/) if you have any questions.
+You can test the model using the `TRAK_ANPR_Test.ipynb` notebook or explore the full object detection process in `TRAK_ANPR.ipynb`. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/hamza-el-filali-en1999/) for any questions.
 
-## Steps
+## Environment Setup
 
-These steps will help you prepare the environment to easily explore the project.
+Follow these steps to prepare your environment:
 
-### Loading the Environment
+### Step 1: Clone the Repository
 
-**Step 1.** Clone this repository:
+Clone this repository and navigate into it:
 
 ```bash
 git clone <repository-url>
 cd <repository-directory>
 ```
 
-**Step 2.** Create a new virtual environment:
+### Step 2: Create and Activate a Virtual Environment
+
+Create a new virtual environment and activate it:
 
 ```bash
 python -m venv anprenv
 ```
 
-**Step 3.** Activate your virtual environment:
+- **Activate on Linux/MacOS:**
 
-```bash
-source anprenv/bin/activate  # Linux
-.\anprenv\Scripts\activate   # Windows
-```
+  ```bash
+  source anprenv/bin/activate
+  ```
 
-**Step 4.** Install dependencies and add the virtual environment to the Python Kernel:
+- **Activate on Windows:**
+
+  ```bash
+  .\anprenv\Scripts\activate
+  ```
+
+### Step 3: Install Dependencies
+
+Upgrade pip and install necessary packages:
 
 ```bash
 python -m pip install --upgrade pip
+pip install -r models/requirements.txt
+```
+
+### Step 4: Set Up Jupyter Notebook
+
+Install the IPython kernel and add the virtual environment to Jupyter:
+
+```bash
 pip install ipykernel
 python -m ipykernel install --user --name=anprenv
 ```
 
-**Step 5.** Open the Jupyter Notebook interface by typing this command in the terminal while your environment is activated:
+Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook
 ```
 
-- Ensure you change the kernel to the virtual environment.
+- Ensure you select the `anprenv` kernel in Jupyter.
 
-**Step 6.** Install all requirements from the `requirements.txt` file:
+### Step 5: Run the Notebooks
 
-```bash
-pip install -r .\models\requirements.txt
-```
+Run all cells in `TRAK_ANPR.ipynb` to ensure the setup is correct. The notebook will install TensorFlow Object Detection and test it. You should see a success notification.
 
-**Step 7.** Run all cells in the notebook `TRAK_ANPR.ipynb`. Ensure you get the correct results at the end. During this process, the notebook will install TensorFlow Object Detection and test it. You should receive a notification indicating that the API has installed successfully.
+## Application Testing
 
-### Application Testing
-
-To run the main desktop application, use this command:
+To run the main desktop application, use:
 
 ```bash
-python .\mainAnprApp.py
+python mainAnprApp.py
 ```
 
-**Step 8.** If you encounter installation errors, refer to the [Error Guide](https://github.com/nicknochnack/TFODCourse/blob/main/Error%20Guide.md) in this folder.
+If you encounter installation errors, refer to the [Error Guide](https://github.com/nicknochnack/TFODCourse/blob/main/Error%20Guide.md).
 
-**Step 9.** Navigate to the evaluation directory and open TensorBoard with the following commands:
+## Monitoring with TensorBoard
+
+Navigate to the evaluation directory and start TensorBoard:
 
 ```bash
 cd Tensorflow/workspace/models/my_ssd_mobnet/eval
 tensorboard --logdir=.
 ```
 
-TensorBoard will be accessible through your browser, allowing you to view metrics such as mean Average Precision (mAP) and Recall.
+Access TensorBoard through your browser to view metrics such as mean Average Precision (mAP) and Recall.
