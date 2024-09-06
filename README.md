@@ -20,8 +20,6 @@ python .\mainAnprApp.py
 
 To test the model, you can use the `TRAK_ANPR_Test.ipynb` notebook directly, or explore the entire object detection process in the `TRAK_ANPR.ipynb` notebook. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/hamza-el-filali-en1999/) if you have any questions.
 
-![ANPR Example](https://i.imgur.com/SaUSstN.png)
-
 ## Steps
 
 These steps will help you prepare the environment to easily explore the project.
